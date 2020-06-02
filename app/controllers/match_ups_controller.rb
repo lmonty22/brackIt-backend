@@ -1,0 +1,2 @@
+class MatchUpsController < ApplicationController
+end
