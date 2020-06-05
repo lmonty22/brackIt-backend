@@ -16,4 +16,12 @@ class TournamentsController < ApplicationController
                                               } } }
         }])
     end
+
+    def create
+        t = Tournament.create(name: params[:name], number_of_teams: params[:numberOfTeams])
+        teams = Team.create_teams(params[:numberOfTeams], params[:teamNames])
+        t.create_rounds(teams)
+    end
+
+    
 end
