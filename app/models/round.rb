@@ -9,7 +9,14 @@ class Round < ApplicationRecord
             mc = MatchUp.create(round_id: self.id, match_up_number: x)
             x += 1
         end
-        byebug
+        if self.round_number == 1  
+            self.match_ups.each do |m|
+                team_a = teams.shift
+                m.team_a_id = team_a.id
+                team_b = teams.shift
+                m.team_b_id = team_b.id
+            end
+        end
     end
    
 end
