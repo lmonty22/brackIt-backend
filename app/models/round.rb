@@ -3,18 +3,20 @@ class Round < ApplicationRecord
     has_many :match_ups
     
     def create_match_ups(teams)
-        number_of_match_ups = teams.length/self.round_number/2
+        number_of_match_ups = teams.length/(2**self.round_number)
+        byebug
         x = 1
-        (number_of_match_ups.to_i).times do 
+        number_of_match_ups.times do 
             mc = MatchUp.create(round_id: self.id, match_up_number: x)
             x += 1
         end
-        teams2 = teams.clone
+        teams2 = teams.map{|t| t.id}
         if self.round_number == 1  
             self.match_ups.each do |m|
+                byebug
                 team_a = teams2.shift
                 team_b = teams2.shift
-                m.update(team_a_id: team_a.id, team_b_id:team_b.id)
+                m.update(team_a_id: team_a, team_b_id:team_b)
             end
         end
     end
