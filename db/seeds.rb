@@ -13,6 +13,7 @@ Team.destroy_all
 User.destroy_all
 
 linds = User.create(username: 'lmonty22', password: 'password')
+mack = User.create(username: 'mack123', password: 'password')
 
 t1 = Tournament.create(name: 'my awesome first tourney', number_of_teams: 8, user_id: linds.id)
 round1 = Round.create(tournament_id: t1.id, round_number: 1)
