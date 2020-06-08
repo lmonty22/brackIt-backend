@@ -10,8 +10,11 @@ Tournament.destroy_all
 Round.destroy_all
 MatchUp.destroy_all
 Team.destroy_all
+User.destroy_all
 
-t1 = Tournament.create(name: 'my awesome first tourney', number_of_teams: 8)
+linds = User.create(username: 'lmonty22', password: 'password')
+
+t1 = Tournament.create(name: 'my awesome first tourney', number_of_teams: 8, user_id: linds.id)
 round1 = Round.create(tournament_id: t1.id, round_number: 1)
 round2 = Round.create(tournament_id: t1.id, round_number: 2)
 round3 = Round.create(tournament_id: t1.id, round_number: 3)
