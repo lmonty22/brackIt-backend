@@ -6,7 +6,7 @@ class MatchUpsController < ApplicationController
         #find and update the next matchup 
         mc.findNextLevel
         tournament = mc.round.tournament
-        render :json => tournament.as_json(include: [:champion, {rounds: {
+        render :json => tournament.as_json(include: [:champion, :user, {rounds: {
                                               include: {match_ups: {
                                                   include: [:team_a, :team_b]
                                               } } }
