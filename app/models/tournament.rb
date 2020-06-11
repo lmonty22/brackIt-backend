@@ -1,5 +1,6 @@
 class Tournament < ApplicationRecord
     has_many :rounds 
+    # has_many :match_ups, through: :rounds
     belongs_to :champion, class_name: "Team", optional: true
     belongs_to :user
     

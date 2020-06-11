@@ -28,5 +28,15 @@ class TournamentsController < ApplicationController
         }])
     end
 
+    def destroy
+        t = Tournament.find(params[:id])
+        mc = t.rounds.map do | r |
+            r.match_ups
+        end
+        MatchUp.delete(mc)
+        Round.delete(t.rounds)
+        t.destroy()
+    end
+
     
 end
