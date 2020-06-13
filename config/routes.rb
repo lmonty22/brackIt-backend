@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   post '/login', to: 'auth#create'
   get '/relogin', to: 'auth#relogin'
-  # resources :teams
+  resources :teams, only: [:update]
   resources :match_ups, only: [:update]
   # resources :rounds
   resources :tournaments, only: [:create, :show, :index, :destroy]
