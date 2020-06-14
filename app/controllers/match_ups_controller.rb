@@ -13,6 +13,17 @@ class MatchUpsController < ApplicationController
         }])
     end
 
+    def remove
+        mc = MatchUp.find(params[:id])
+        mc.remove_from_matchup(params[:team_slot])
+        tournament = Tournament.find(params[:tournament_id])
+        render :json => tournament.as_json(include: [:champion, :user, {rounds: {
+            include: {match_ups: {
+                include: [:team_a, :team_b]
+            } } }
+        }])
+    end
+
     private
     def match_up_params
         params.require(:match_up).permit(:team_a_id, :team_b_id, :winner_id)
