@@ -14,7 +14,7 @@ class TournamentsController < ApplicationController
     end
 
     def create
-        t = Tournament.create(name: params[:name], number_of_teams: params[:numberOfTeams], user_id: params[:user_id])
+        t = Tournament.create(name: params[:name], number_of_teams: params[:numberOfTeams], user_id: params[:user_id], public: !params[:private])
         team_names = params[:teamNames]
         if params[:shuffle]
             team_names = team_names.shuffle()
