@@ -40,4 +40,6 @@ m2r2 = MatchUp.create(round_id: round2.id, match_up_number: 2)
 
 m1r3 = MatchUp.create(round_id: round3.id, match_up_number: 1)
 
+follow = TournamentFollower.create(tournament_followed_id: t1.id, follower_id: mack.id)
+
 # teams = [team1, team2, team3, team4, team5, team6, team7, team8]

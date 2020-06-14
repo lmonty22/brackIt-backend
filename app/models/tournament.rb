@@ -1,5 +1,8 @@
 class Tournament < ApplicationRecord
     has_many :rounds 
+    has_many :tournament_followers, :foreign_key => "tournament_followed_id"
+    has_many :followers, through: :tournament_followers
+
     # has_many :match_ups, through: :rounds
     belongs_to :champion, class_name: "Team", optional: true
     belongs_to :user
