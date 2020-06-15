@@ -3,6 +3,8 @@ class Tournament < ApplicationRecord
     # has_many :match_ups, through: :rounds
     belongs_to :champion, class_name: "Team", optional: true
     belongs_to :user
+    has_many :followers, :foreign_key => "tournament_followed_id"
+    has_many :user_followers, through: :followers
     
     def setChampion(winner_id)
         self.update(champion_id: winner_id)

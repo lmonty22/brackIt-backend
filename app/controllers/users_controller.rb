@@ -10,6 +10,7 @@ class UsersController < ApplicationController
         new_hash = {}
         new_hash["user_data"] = user
         new_hash["token"] = token
+        new_hash['followed_tournaments'] = user.tournament_followeds
         render json: new_hash
     end
 
