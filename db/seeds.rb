@@ -16,33 +16,30 @@ Follower.destroy_all
 
 linds = User.create(username: 'lmonty22', password: 'password')
 mack = User.create(username: 'mack123', password: 'password')
+mary = User.create(username: 'outdoorsyChick1', password: 'password')
 
-t1 = Tournament.create(name: 'my awesome first tourney', number_of_teams: 8, user_id: linds.id)
-round1 = Round.create(tournament_id: t1.id, round_number: 1)
-round2 = Round.create(tournament_id: t1.id, round_number: 2)
-round3 = Round.create(tournament_id: t1.id, round_number: 3)
+t1 = Tournament.create(name: "Lindsay's Skiball Tourney", number_of_teams: 8, user_id: linds.id)
+team_names = ['Lindsay', 'Mack', 'Jason', 'Danny', 'Sue', 'Greg', 'Chelsey', 'Elle']
+teams = Team.create_teams(t1.number_of_teams, team_names)
+t1.create_rounds(teams)
 
-team1 = Team.create(name: 'team1')
-team2 = Team.create(name: 'team2')
-team3 = Team.create(name: 'team3')
-team4 = Team.create(name: 'team4')
-team5 = Team.create(name: 'team5')
-team6 = Team.create(name: 'team6')
-team7 = Team.create(name: 'team7')
+t2 = Tournament.create(name: "Mack's Cornhole Tourney", number_of_teams: 16, user_id: mack.id, public: false)
+teams_names2 = ['Mack & Lindsay', 'Vicky & Mike', 'Hart & Nellie', 'Elle & Kelpie', 'Greg & Sue', 'Danny & Jason', 'Team 1', 'Team 2', 'Team 3', 'Team 4', 'Team 5', 'Team 6', 'Team 7', 'Team 8', 'Team 9', 'Team 10'].shuffle()
+teams2 = Team.create_teams(t2.number_of_teams, teams_names2)
+t2.create_rounds(teams2)
 
-team8 = Team.create(name: 'team8')
+t3 = Tournament.create(name: "Hashbrowns Scribble.io", number_of_teams: 16, user_id: mary.id)
+teams_names3 = ['Chine', 'Lindsay', 'Mary', 'Uzo', 'Bret', 'Junior', 'Danny', 'T', 'Alex', 'Carla', 'Beza', 'Deijah', 'Sebastian', 'Yari', 'Richard', 'Dawit'].shuffle()
+teams3 = Team.create_teams(t3.number_of_teams, teams_names3)
+t3.create_rounds(teams3)
 
-m1r1 =MatchUp.create(round_id: round1.id, match_up_number: 1, team_a_id: team1.id, team_b_id: team2.id)
-m2r1 =MatchUp.create(round_id: round1.id, match_up_number: 2, team_a_id: team3.id, team_b_id: team4.id)
-m3r1 =MatchUp.create(round_id: round1.id, match_up_number: 3, team_a_id: team5.id, team_b_id: team6.id)
-m4r1 =MatchUp.create(round_id: round1.id, match_up_number: 4, team_a_id: team7.id, team_b_id: team8.id)
-
-m1r2 = MatchUp.create(round_id: round2.id, match_up_number: 1)
-m2r2 = MatchUp.create(round_id: round2.id, match_up_number: 2)
-
-m1r3 = MatchUp.create(round_id: round3.id, match_up_number: 1)
+t4 = Tournament.create(name: "Hashbrowns Ping Pong", number_of_teams: 16, user_id: mary.id)
+teams_names4 = ['Chine', 'Lindsay', 'Mary', 'Uzo', 'Bret', 'Junior', 'Danny', 'T', 'Alex', 'Carla', 'Beza', 'Deijah', 'Sebastian', 'Yari', 'Richard', 'Dawit'].shuffle()
+teams4 = Team.create_teams(t4.number_of_teams, teams_names4)
+t4.create_rounds(teams4)
 
 mf = Follower.create(user_follower_id: mack.id, tournament_followed_id: t1.id)
+lf = Follower.create(user_follower_id: linds.id, tournament_followed_id: t3.id)
 
 
 
