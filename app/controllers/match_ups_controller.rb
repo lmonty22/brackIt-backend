@@ -4,7 +4,9 @@ class MatchUpsController < ApplicationController
         mc = MatchUp.find(params[:id])
         mc.update(match_up_params)
         #find and update the next matchup 
-        mc.findNextLevel
+        if mc.winner_id 
+            mc.findNextLevel
+        end
         tournament = mc.round.tournament
         render :json => tournament.as_json(include: [:champion, :user, {rounds: {
                                               include: {match_ups: {
@@ -26,6 +28,6 @@ class MatchUpsController < ApplicationController
 
     private
     def match_up_params
-        params.require(:match_up).permit(:team_a_id, :team_b_id, :winner_id)
+        params.require(:match_up).permit(:team_a_id, :team_b_id, :winner_id, :team_a_score, :team_b_score)
     end
 end
