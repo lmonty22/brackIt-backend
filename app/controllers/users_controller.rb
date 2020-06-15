@@ -8,9 +8,12 @@ class UsersController < ApplicationController
         payload = {user_id: user.id}
         token = encode(payload)
         new_hash = {}
-        new_hash["user_data"] = user
+        new_hash["user_data"] = user.as_json(include: 
+            {followers: {include:
+                {tournament_followed: {
+                    include: :user
+            }}}})
         new_hash["token"] = token
-        new_hash['followed_tournaments'] = user.tournament_followeds
         render json: new_hash
     end
 
