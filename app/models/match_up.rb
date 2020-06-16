@@ -28,10 +28,10 @@ class MatchUp < ApplicationRecord
         tournament = self.round.tournament
         last_round = tournament.rounds.find{|r| r.round_number == ((self.round.round_number)-1)}
         if team_slot == 'team_a'
-            self.update(team_a_id: nil)
+            self.update(team_a_id: nil, team_a_score: nil, team_b_score: nil)
             last_match_up = last_round.match_ups.find{|m| m.match_up_number == ((self.match_up_number * 2) - 1)}
         elsif team_slot == 'team_b'
-            self.update(team_b_id: nil)
+            self.update(team_b_id: nil, team_a_score: nil, team_b_score: nil)
             last_match_up = last_round.match_ups.find{|m| m.match_up_number == (self.match_up_number * 2)}
         end
         last_match_up.update(winner_id: nil)
