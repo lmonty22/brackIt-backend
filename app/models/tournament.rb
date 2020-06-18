@@ -12,7 +12,7 @@ class Tournament < ApplicationRecord
 
     def create_rounds(teams)
         number_of_rounds = Math.log2(self.number_of_teams)
-        # check if number of rounds is a an interget without remainder
+        # check if number of rounds is a an interger without remainder
         if number_of_rounds % 1 == 0 
             x = 1
             number_of_rounds.to_i.times do 
