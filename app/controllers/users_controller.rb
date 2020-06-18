@@ -11,7 +11,7 @@ class UsersController < ApplicationController
         new_hash["user_data"] = user.as_json(include: 
             {followers: {include:
                 {tournament_followed: {
-                    include: :user
+                    include: [:user, :champion]
             }}}})
         new_hash["token"] = token
         render json: new_hash

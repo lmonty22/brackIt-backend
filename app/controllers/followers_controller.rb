@@ -4,7 +4,7 @@ class FollowersController < ApplicationController
         follow = Follower.create(user_follower_id: params[:user_follower_id], tournament_followed_id: params[:tournament_followed_id])
         render json: follow.as_json(include: {
             tournament_followed: {
-                include: :user
+                include: [:user, :champion]
             }
         })
     end
