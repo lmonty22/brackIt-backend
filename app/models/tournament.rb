@@ -10,16 +10,19 @@ class Tournament < ApplicationRecord
         self.update(champion_id: winner_id)
     end
 
+
     def create_rounds(teams)
         number_of_rounds = Math.log2(self.number_of_teams)
-        # check if number of rounds is a an interger without remainder
+        # check if number of rounds is a an interger without remainder this is here for scalability 
         if number_of_rounds % 1 == 0 
             x = 1
             number_of_rounds.to_i.times do 
+                #create each round
                 r = Round.create(round_number: x, tournament_id: self.id)
                 x+= 1 
             end
         end
+        #for each round, create matchups 
         self.rounds.each{|r| r.create_match_ups(teams)}
     end
 

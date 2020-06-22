@@ -1,8 +1,11 @@
 class AuthController < ApplicationController
     def create
+        #login
         user = User.find_by(username: params[:username])
+        #uathenticate with bcrypt password_digest
         if(user && user.authenticate(params[:password]))
               payload = {user_id: user.id}
+              #encode is in application controller
               token = encode(payload)
               new_hash = {}
               new_hash["user_data"] = user.as_json(include: 
@@ -22,6 +25,8 @@ class AuthController < ApplicationController
     end
 
     def relogin
+      #relogin, find user based on token
+      #decode is located in application controller
       token = request.headers["Authenticate"]
       user = User.find(decode(token)["user_id"]) 
       render json: user.as_json(include: 

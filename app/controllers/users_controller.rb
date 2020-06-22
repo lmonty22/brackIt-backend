@@ -16,10 +16,4 @@ class UsersController < ApplicationController
         new_hash["token"] = token
         render json: new_hash
     end
-
-    private
-
-    # def user_params
-    #     params.require(:user).permit(:username, :password)
-    # end
 end

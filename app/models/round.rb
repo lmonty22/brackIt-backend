@@ -3,6 +3,7 @@ class Round < ApplicationRecord
     has_many :match_ups
     
     
+    #create matchups for each round
     def create_match_ups(teams)
         number_of_match_ups = teams.length/(2**self.round_number)
         x = 1

@@ -1,5 +1,6 @@
 class Team < ApplicationRecord
-    # has_many :match_ups
+
+    #create all teamms based on a array of team Names
     def self.create_teams(number_of_teams, teamNames)
         array_of_teams = []
         teamNames.each do |t| 
