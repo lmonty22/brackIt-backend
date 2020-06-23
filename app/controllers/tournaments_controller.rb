@@ -30,6 +30,16 @@ class TournamentsController < ApplicationController
         # }])
     end
 
+    def update
+        t = Tournament.find(params[:id])
+        t.update(tournament_params)
+        render :json => t.as_json(include: [:champion, :user, {rounds: {
+            include: {match_ups: {
+                include: [:team_a, :team_b]
+            } } }
+        }])
+    end
+
     def destroy
         t = Tournament.find(params[:id])
         mc = t.rounds.map do | r |
