@@ -21,13 +21,13 @@ class TournamentsController < ApplicationController
         end
         teams = Team.create_teams(params[:number_of_teams], team_names)
         t.create_rounds(teams)
-        render :json => t.as_json(include: [:champion, :user])
+        # render :json => t.as_json(include: [:champion, :user])
          # maybe render this one if I force a redirect? 
-        # render :json => t.as_json(include: [:champion, :user, {rounds: {
-        #                                       include: {match_ups: {
-        #                                           include: [:team_a, :team_b]
-        #                                       } } }
-        # }])
+        render :json => t.as_json(include: [:champion, :user, {rounds: {
+                                              include: {match_ups: {
+                                                  include: [:team_a, :team_b]
+                                              } } }
+        }])
     end
 
     def update
