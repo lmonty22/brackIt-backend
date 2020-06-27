@@ -35,7 +35,11 @@ Additional features allow you to search for (public) tournaments and follow tour
 8. Make sure to clone down the [BrackIt Frontend Repo](https://github.com/lmonty22/brackIt-front-end/) and follow the front end Readme instructions next! 
 
 
-### need to include more... 
+## RSPEC Tests
+
+1. There are tests for backend models written in Rpec
+
+2. Make sure models are running successfully by running `rspec`
 
 Things you may want to cover:
 
