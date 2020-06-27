@@ -29,6 +29,12 @@ Additional features allow you to search for (public) tournaments and follow tour
 
 7. Rails should now be running the Postgres api on http://localhost:3000. You can check the tournaments route going to http://localhost:3000/touranments in your browser.
 
+<img
+src=“tournaments.png”
+raw=true
+alt=“Tournaments Route”
+style=“margin-right: 10px;”
+/>
  
 
 8. Make sure to clone down the [BrackIt Frontend Repo](https://github.com/lmonty22/brackIt-front-end/) and follow the front end Readme instructions next! 
