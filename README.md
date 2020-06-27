@@ -13,8 +13,8 @@ Additional features allow you to search for (public) tournaments and follow tour
 
 1. Clone down this repo and cd into the directory
 
-2. #Create Your Own Secret Key.
-    This repo relies on JWT to generate tokens to be stored in localstorage. JWT requires a secret key to decode and encode user information. Create a .env file in the top level of the directory to store your secret key. This file should already be added to gitIgnore and will not be pushed to gitHub. Your .env file should look something like this:
+2. Create Your Own Secret Key.
+    This repo relies on the JWT ruby gem to generate user tokens to be stored in localstorage. JWT requires a secret key to decode and encode user information. Create a .env file in the top level of the directory to store your secret key. This file should already be added to gitIgnore and will not be pushed to gitHub. Your .env file should look something like this:
     `SECRET_KEY= 'YourSecretKeyString'`
 
 3. Run 
@@ -29,11 +29,11 @@ Additional features allow you to search for (public) tournaments and follow tour
 6. Run
 `rails s`
 
-7. Rails should now be running the Postgres api on http://localhost:3000. You can check the tournaments route going to http://localhost:3000/tournaments in your browser.
+7. Rails should be running the api on http://localhost:3000. You can check the tournaments route going to http://localhost:3000/tournaments in your browser.
 
 ![alt tournaments route](tournaments.png)
 
-8. Make sure to clone down the [BrackIt Frontend Repo](https://github.com/lmonty22/brackIt-front-end/) and follow the front end Readme instructions next! 
+8. Clone down the [BrackIt Frontend Repo](https://github.com/lmonty22/brackIt-front-end/) and follow the frontend Readme instructions! 
 
 9. If you have previously downloaded and ran this repo, you may encounter a localstorage error if a locally stored token is invalid in your new database. Run `localstorage.clear()` in your console. 
 
