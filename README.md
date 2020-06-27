@@ -43,6 +43,3 @@ Additional features allow you to search for (public) tournaments and follow tour
 
 2. Make sure models are running successfully by running `rspec`
 
-3. 7 tests shoudl return passing.
-
-
