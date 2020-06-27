@@ -9,21 +9,29 @@ Additional features allow you to search for (public) tournaments and follow tour
 
 ## Instructions
 
-2. Run 
+1. Clone down this repo and cd into the directory
+
+2. Create Your Own Secret Key 
+    This repo relies on JWT to generate tokens to be stored in localstorage. JWT requires a secret key to decode and encode user information. Create a .env file in the top level of the directory to store your secret key. This file should already be added to gitIgnore and will not be pushed to gitHub. Your .env file should look something like this:
+    `SECRET_KEY= 'YourSecretKeyString'`
+
+3. Run 
 `bundle install`
 
-3. Run
+4. Run
 `rails db:migrate`
 
-4. Run
+5. Run
 `rails db:seed`
 
-5. Run
+6. Run
 `rails s`
 
-6. Rails should now be running the api on http://localhost:3000. You can check the tournaments route going to http://localhost:3000/touranments in your browser.
+7. Rails should now be running the Postgres api on http://localhost:3000. You can check the tournaments route going to http://localhost:3000/touranments in your browser.
 
-5. Make sure to clone down the [Front-end Repo](https://github.com/lmonty22/brackIt-front-end/) and follow the front-end Readme instructions next! 
+ 
+
+8. Make sure to clone down the [BrackIt Frontend Repo](https://github.com/lmonty22/brackIt-front-end/) and follow the front end Readme instructions next! 
 
 
 ### need to include more... 
