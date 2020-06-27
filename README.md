@@ -3,9 +3,9 @@
 
 ## Summary
 
-This is a tournament bracket generater designed to allow users to login and generate a bracket to share with their friends. Users create BrackIts with 4, 8, 16, 32 or 64 teams. You may make tournaments private or public. Shuffle teams to make first round matchups random, or manually decide first round match ups when you enter your team names. You may record scores, advance teams and edit team names throughout the Torurnament and finally crown a champion. 
+This is a tournament bracket generater designed to allow users to generate and manage tournament BrackIts while their friends follow along. Users can create BrackIts with 4, 8, 16, 32 or 64 teams. Tournaments can be private (unsearchable) or public. First round matchups can be random by selecting 'shuffle teams' or the tournament creator can manually decide first round match ups when entering team names. You may record scores, advance teams and edit team names, and edit tournament details, throughout the Torurnament and finally crown a champion. 
 
-Additional features allow you to search for tournaments (that are public) and follow tournaments. 
+Additional features allow you to search for (public) tournaments and follow tournaments. 
 
 ## Instructions
 
