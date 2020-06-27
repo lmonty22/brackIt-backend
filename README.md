@@ -29,7 +29,7 @@ Additional features allow you to search for (public) tournaments and follow tour
 6. Run
 `rails s`
 
-7. Rails should now be running the Postgres api on http://localhost:3000. You can check the tournaments route going to http://localhost:3000/touranments in your browser.
+7. Rails should now be running the Postgres api on http://localhost:3000. You can check the tournaments route going to http://localhost:3000/tournaments in your browser.
 
 ![alt tournaments route](tournaments.png)
 
