@@ -35,7 +35,7 @@ Additional features allow you to search for (public) tournaments and follow tour
 
 8. Make sure to clone down the [BrackIt Frontend Repo](https://github.com/lmonty22/brackIt-front-end/) and follow the front end Readme instructions next! 
 
-9. If you have previously downloaded and ran this repo, you may encounter a localstorage error. Run `localstorage.clear()` in your console. 
+9. If you have previously downloaded and ran this repo, you may encounter a localstorage error if a locally stored token is invalid in your new database. Run `localstorage.clear()` in your console. 
 
 ## RSPEC Tests
 
