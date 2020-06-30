@@ -26,5 +26,11 @@ class Tournament < ApplicationRecord
         self.rounds.each{|r| r.create_match_ups(teams)}
     end
 
+    def removeLastMatchUpWinner
+        round_number= Math.log2(self.number_of_teams).to_i
+        last_round = self.rounds.find_by(round_number: round_number)
+        last_round.match_ups.first.update(winner_id: nil)
+    end
+
 
 end

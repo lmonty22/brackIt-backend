@@ -18,7 +18,7 @@ linds = User.create(username: 'lmonty22', password: 'password')
 mack = User.create(username: 'mack123', password: 'password')
 mary = User.create(username: 'outdoorsyChick1', password: 'password')
 
-t1 = Tournament.create(name: "Lindsay's Skiball Tourney", number_of_teams: 8, user_id: linds.id)
+t1 = Tournament.create(name: "Lindsay's Skee-ball Tourney", number_of_teams: 8, user_id: linds.id)
 team_names = ['Lindsay', 'Mack', 'Jason', 'Danny', 'Sue', 'Greg', 'Chelsey', 'Elle']
 teams = Team.create_teams(t1.number_of_teams, team_names)
 t1.create_rounds(teams)

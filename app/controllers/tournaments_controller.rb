@@ -33,6 +33,9 @@ class TournamentsController < ApplicationController
     def update
         t = Tournament.find(params[:id])
         t.update(tournament_params)
+        if params[:champion_id] == nil 
+            t.removeLastMatchUpWinner()
+        end
         render :json => t.as_json(include: [:champion, :user, {rounds: {
             include: {match_ups: {
                 include: [:team_a, :team_b]
@@ -53,7 +56,7 @@ class TournamentsController < ApplicationController
     private
 
     def tournament_params
-        params.require(:tournament).permit(:name, :number_of_teams, :user_id, :public)
+        params.require(:tournament).permit(:name, :number_of_teams, :user_id, :public, :champion_id)
     end
 
     
