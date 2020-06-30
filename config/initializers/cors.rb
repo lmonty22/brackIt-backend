@@ -7,7 +7,7 @@
 
 Rails.application.config.middleware.insert_before 0, Rack::Cors do
   allow do
-    origins 'https://brackit22.herokuapp.com/'
+    origins 'https://git.heroku.com/brackit22.git'
 
     resource '*',
       headers: :any,
