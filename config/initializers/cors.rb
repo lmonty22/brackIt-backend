@@ -7,8 +7,10 @@
 
 Rails.application.config.middleware.insert_before 0, Rack::Cors do
   allow do
-    origins 'https://brackit.netlify.app'
-    # origins '*'
+    # for deployment 
+    # origins 'https://brackit.netlify.app'
+    # for local
+    origins '*'
 
     resource '*',
       headers: :any,
